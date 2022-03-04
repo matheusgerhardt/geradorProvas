@@ -25,6 +25,7 @@
           					<td>
           						<a th:href="@{/provas/edit/{id}(id=${prova.id})}" th:text="${prova.tituloProva}"></a>
           					</td>
+          					<td th:text="${{prova.quantidadeQuestoes}}"/>
           					<td><a th:href="@{/provas/delete/{id}(id=${prova.id})}">
            						 <i class="bi bi-dash-circle" title="delete"></i>
           					</a></td>

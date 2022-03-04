@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Prova {
@@ -12,10 +13,10 @@ public class Prova {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank(message="Campo Obrigatório")
 	private String tituloProva;
 	
-	@NotBlank
+	@NotNull(message="Campo Obrigatório")
 	private Integer quantidadeQuestoes;
 
 	public Prova() {}

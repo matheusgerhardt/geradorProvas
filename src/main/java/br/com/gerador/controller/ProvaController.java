@@ -34,7 +34,7 @@ public class ProvaController {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		dao.deleteById(id);
-		return "redirect:/prova/list";
+		return "redirect:/provas/list";
 	}
 	
 	@GetMapping("/edit/{id}")
@@ -57,6 +57,6 @@ public class ProvaController {
 			return "prova/manterProva.html";
 		}
 		dao.save(prova);
-		return "redirect:/prova/list";
+		return "redirect:/provas/list";
 	}
 }

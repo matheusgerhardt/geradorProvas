@@ -2688,7 +2688,6 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
   height: 100%;
-  padding: 1.5rem 0;
   pointer-events: none;
   border: 0.125rem solid transparent;
   transform-origin: 0 0;
@@ -11441,7 +11440,6 @@ html {
   box-shadow: none;
 }
 .form-floating label {
-  font-size: 1.5rem;
   color: #6c757d;
 }
 
