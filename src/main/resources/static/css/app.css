@@ -119,6 +119,23 @@ h1, .h1 {
   }
 }
 
+.h1-gerador {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.header-gerador {
+	padding-top: 150px !important;
+}
+
+.header-cadastro {
+	padding-top: 120px !important;
+}
+
+.cadastro {
+	padding-bottom: 25px;
+}
+
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
@@ -2201,7 +2218,6 @@ progress {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2665,7 +2681,6 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control,
 .form-floating > .form-select {
-  height: 5.5rem;
   line-height: 1.25;
 }
 .form-floating > label {
@@ -3032,8 +3047,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #1abc9c;
-  border-color: #1abc9c;
+  background-color: #16a085;
+  border-color: #15967d;
 }
 .btn-primary:hover {
   color: #fff;
@@ -11419,7 +11434,6 @@ html {
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  border-radius: 0;
   border-width: 1px;
 }
 .form-floating input.form-control:focus,
