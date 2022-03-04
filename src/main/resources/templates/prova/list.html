@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="head :: head"></head>
+	
+	<body>
+		<div th:replace="menu :: menu"></div>
+		
+		<div class="container d-flex align-items-center flex-column">
+        <a class="btn btn-primary btn-sm" th:href="@{/provas/new}">Nova Prova</a>
+        </div>
+		
+		<header class="masthead bg-primary text-white text-center">
+			<div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Gerador de Provas</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <a class="masthead-subheading font-weight-light mb-0" th:href="@{/prova/new}">Gerar Prova</a>
+                <a class="masthead-subheading font-weight-light mb-0" href="#">Cadastrar Questão</a>
+                <a class="masthead-subheading font-weight-light mb-0" th:href="@{/prova/list}">Provas Geradas</a>
+            </div>
+        </header>
+	</body>
+</html>
