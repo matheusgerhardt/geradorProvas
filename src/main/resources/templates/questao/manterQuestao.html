@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="head :: head"></head>
+	
+	<body>
+		<div th:replace="menu :: menu"></div>
+		<header class="masthead bg-primary text-white text-center header-gerador">
+			<div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="text-uppercase mb-0 h1-cadastro">Cadastrar Questão</h1>
+                <!--<div class="cadastro" th:switch="${prova.id>0}">
+      				<p class="masthead-subheading font-weight-light mb-0" th:case="${true}">Atualização de Questão</p>
+      				<p class="masthead-subheading font-weight-light mb-0" th:case="*">Cadastro de Questão</p>
+      			</div>-->
+      			
+      			<!--<form th:object="${prova}" action="/provas/save" method="POST">
+      				<input type="hidden" th:field="${prova.id}" th:if="${prova.id}">-->
+      				<form>
+      				
+      				<div class="form-floating mb-3">
+      					<label for="tipoQuestao">Tipo da Questão</label>
+                    	<select class="form-select" id="tipoQuestao">
+                    		<option value="Múltipla Escolha">Múltipla Escolha</option>
+                    		<option value="Única Escolha">Única Escolha</option>
+                    		<option value="Dissertiva">Dissertiva</option>
+                    	</select>
+                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+      					<label for="indDificuldade">Índice de Dificuldade</label>
+                    	<select class="form-select" id="indDificuldade">
+                    		<option value="Fácil">Fácil</option>
+                    		<option value="Intermediário">Intermediário</option>
+                    		<option value="Difícil">Difícil</option>
+                    	</select>
+                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+      					<label for="tagQuestao">TAG</label>
+                    	<select class="form-select" id="tagQuestao">
+                    		<option value="Teste">Teste</option>
+                    	</select>
+                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                    	<input class="form-control" id="descQuestao" type="text" placeholder="Descrição da Questão" autocomplete="off"/>
+      					<label for="descQuestao">Descrição da Questão</label>
+                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
+                    </div>
+                    
+                    <div class="mb-3">
+          				<!--<p th:switch="${prova.id>0}">
+            			<button class="btn btn-primary btn-sm" type="submit" th:case="${true}" th:text="Atualizar"></button>
+            			<button class="btn btn-primary btn-sm" type="submit" th:case="*" th:text="Adicionar"></button>
+          				</p>-->
+        			</div>
+      			</form>
+                
+            </div>
+        </header>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="head :: head"></head>
+	
+	<body>
+		<div th:replace="menu :: menu"></div>
+		<header class="masthead bg-primary text-white text-center header-gerador">
+			<div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="text-uppercase mb-0 h1-cadastro">Cadastrar TAG</h1>
+                <!--<div class="cadastro" th:switch="${prova.id>0}">
+      				<p class="masthead-subheading font-weight-light mb-0" th:case="${true}">Atualização de Questão</p>
+      				<p class="masthead-subheading font-weight-light mb-0" th:case="*">Cadastro de Questão</p>
+      			</div>-->
+      			
+      			<!--<form th:object="${prova}" action="/provas/save" method="POST">
+      				<input type="hidden" th:field="${prova.id}" th:if="${prova.id}">-->
+      				<form>
+      				
+                    
+                    <div class="form-floating mb-3">
+                    	<input class="form-control" id="nomeTag" type="text" placeholder="Nome da TAG" autocomplete="off"/>
+      					<label for="nomeTag">Nome da TAG</label>
+                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
+                    </div>
+                    
+                    <div class="mb-3">
+          				<!--<p th:switch="${prova.id>0}">
+            			<button class="btn btn-primary btn-sm" type="submit" th:case="${true}" th:text="Atualizar"></button>
+            			<button class="btn btn-primary btn-sm" type="submit" th:case="*" th:text="Adicionar"></button>
+          				</p>-->
+        			</div>
+      			</form>
+                
+            </div>
+        </header>
+	</body>
+</html>

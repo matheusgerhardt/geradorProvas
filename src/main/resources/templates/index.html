@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org"	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<div th:replace="head :: head"></div>
+	<body>
+		<div th:replace="menu :: menu"></div>
+		
+		<header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Gerador de Provas</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <a class="masthead-subheading font-weight-light mb-0" th:href="@{/provas/new}">Gerar Prova</a>
+                <a class="masthead-subheading font-weight-light mb-0" th:href="@{/provas/list}">Provas Geradas</a>
+                <a class="masthead-subheading font-weight-light mb-0" href="#">Cadastrar Questão</a>
+                <a class="masthead-subheading font-weight-light mb-0" href="#">Questões Cadastradas</a>
+                <a class="masthead-subheading font-weight-light mb-0" href="#">Cadastrar TAGs</a>
+                <a class="masthead-subheading font-weight-light mb-0" href="#">TAGs Cadastradas</a>
+            </div>
+        </header>
+	</body>
+</html>
