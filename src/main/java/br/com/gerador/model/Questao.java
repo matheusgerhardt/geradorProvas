@@ -1,10 +1,15 @@
 package br.com.gerador.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
+@Entity
 public class Questao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +18,10 @@ public class Questao {
 	private tipoQuestao tipoQuestao;
 	
 	private indiceDificuldade indiceDificuldade;
+	
+	//@OneToOne(cascade = CascadeType.ALL)
+	//@JoinColumn(name= "idtagQuestao", referencedColumnName = "idTag")
+	//private Tag Tag;
 	
 	@NotBlank(message="Campo Obrigatório")
 	private String descricao;
@@ -60,5 +69,4 @@ public class Questao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
 }

@@ -7,7 +7,7 @@
 		
 		<header class="masthead bg-primary text-white text-center header-gerador">
 			<div class="container d-flex align-items-center flex-column">
-				<a class="btn btn-primary btn-sm" href="#">Nova Questão</a>
+				<a class="btn btn-primary btn-sm" th:href="@{/questoes/new}">Nova Questão</a>
                 <!-- Masthead Heading-->
                 <h1 class="text-uppercase mb-0 h1-gerador">Questões Geradas</h1>
                 <table class="table table-striped table-bordered table-hover">
@@ -20,21 +20,18 @@
           					<th>Menu</th>
         				</tr>
       				</thead>
-      				<!--<tbody>
-        				<tr th:each="prova: ${provaList}">
-          					<td th:text="${prova.id}"/>
-          					<td>
-          						<a th:href="@{/provas/edit/{id}(id=${prova.id})}" th:text="${prova.tituloProva}"></a>
-          					</td>
-          					<td th:text="${{prova.quantidadeQuestoes}}"/>
-          					<td><a class="align-self-start" th:href="@{/provas/delete/{id}(id=${prova.id})}">
+      				<tbody>
+        				<tr th:each="questao: ${questaoList}">
+          					<td th:text="${questao.idQuestao}"/>
+          					<td th:text="${{questao.tipoQuestao}}"/>
+          					<td><a class="align-self-start" th:href="@{/questoes/delete/{idQuestao}(idQuestao=${questao.idQuestao})}">
            						 <i class="bi bi-dash-circle" title="Excluir"></i>
           					</a>
           					<a class="align-self-end" href="#">
            						 <i class="bi bi-eye" title="Visualizar"></i>
           					</a></td>
         				</tr>
-      				</tbody>-->
+      				</tbody>
                 </table>
             </div>
         </header>
