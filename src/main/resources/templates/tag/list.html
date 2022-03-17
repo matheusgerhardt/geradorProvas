@@ -18,21 +18,20 @@
           					<th>Menu</th>
         				</tr>
       				</thead>
-      				<!--<tbody>
-        				<tr th:each="prova: ${provaList}">
-          					<td th:text="${prova.id}"/>
+      				<tbody>
+        				<tr th:each="tag: ${tagList}">
+          					<td th:text="${tag.id}"/>
           					<td>
-          						<a th:href="@{/provas/edit/{id}(id=${prova.id})}" th:text="${prova.tituloProva}"></a>
+          						<a th:href="@{/tags/edit/{id}(id=${tag.id})}" th:text="${tag.nome}"></a>
           					</td>
-          					<td th:text="${{prova.quantidadeQuestoes}}"/>
-          					<td><a class="align-self-start" th:href="@{/provas/delete/{id}(id=${prova.id})}">
+          					<td><a class="align-self-start" th:href="@{/tags/delete/{id}(id=${tag.id})}">
            						 <i class="bi bi-dash-circle" title="Excluir"></i>
           					</a>
           					<a class="align-self-end" href="#">
            						 <i class="bi bi-eye" title="Visualizar"></i>
           					</a></td>
         				</tr>
-      				</tbody>-->
+      				</tbody>
                 </table>
             </div>
         </header>
