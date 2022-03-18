@@ -1,27 +1,17 @@
 package br.com.gerador.controller;
 
-import java.util.List;
-
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import br.com.gerador.dao.TagRepository;
-import br.com.gerador.model.Tag;
 
 @Controller
 @RequestMapping("/tags")
 public class TagController {
 	
+	/*
+	
 	@Autowired 
 	TagRepository dao;
+	private TagService service;
 	
 	@GetMapping("/new")
 	public String newForm(Model model) {
@@ -59,5 +49,23 @@ public class TagController {
 		return "redirect:/tags/list";
 	}
 	
+	// Teste
+	
+	@GetMapping("/gettags")
+	public ModelAndView getQuestoes() {
+		
+		ModelAndView mv = new ModelAndView("tag/list");
+		
+		mv.addObject("tags", service.getTags());
+				
+		return mv;
+	}
+	
+	@PostMapping("/salvar")
+	public String salvar(@ModelAttribute Tag tag) {
+		service.salvar(tag);
+		return "redirect:/tag/manterTag";
+	
+*/
 
 }

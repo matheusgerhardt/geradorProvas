@@ -8,56 +8,88 @@
 			<div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
                 <h1 class="text-uppercase mb-0 h1-cadastro">Cadastrar Questão</h1>
-                <div class="cadastro" th:switch="${questao.idQuestao>0}">
-      				<p class="masthead-subheading font-weight-light mb-0" th:case="${true}">Atualização de Questão</p>
-      				<p class="masthead-subheading font-weight-light mb-0" th:case="*">Cadastro de Questão</p>
-      			</div>
+               
       			
       			<form th:object="${questao}" action="/questoes/save" method="POST">
       				<input type="hidden" th:field="${questao.idQuestao}" th:if="${questao.idQuestao}">
       				<form>
       				
+      				<br>
       				<div class="col-8">
             			<label class="form-label" for="indiceDificuldade">Índice de Dificuldade</label>
 	    				<select name='indiceDificuldade' class="form-control">
-	    				<option th:each="cat: ${indicesDificuldade}"
-	    					th:value="${cat}" 
-	    					th:text="${cat}"/>
+	    				<option th:each="difOpt: ${T(br.com.gerador.model.indiceDificuldade).values()}"
+	    					th:value="${difOpt}" th:text="${difOpt}"/></option>
 	    				</select>
           			</div>
-                    
+          			
+          			<br>                 
                     <div class="col-8">
             			<label class="form-label" for="tipoQuestao">Tipo da Questão</label>
 	    				<select name='tipoQuestao' class="form-control">
-	    				<option th:each="cat: ${tipoQuestoes}"
-	    					th:value="${cat}" 
-	    					th:text="${cat}"/>
+	    				<option th:each="tipoOpt: ${T(br.com.gerador.model.tipoQuestao).values()}"
+	    					th:value="${tipoOpt}" th:text="${tipoOpt}"/>
 	    				</select>
           			</div>
+          			
+          			<br>
+          			<div class="col-8">
+            			<label class="form-label" for="Tag">Tag</label>
+	    				<select name='Tag' class="form-control">
+	    				<option th:each="tipoTag: ${T(br.com.gerador.model.Tag).values()}"
+	    					th:value="${tipoTag}" th:text="${tipoTag}"/>
+	    				</select>
+          			</div><br>
                     
+  
                     <div class="form-floating mb-3">
-      					<label for="tagQuestao">TAG</label>
-                    	<select class="form-select" id="tagQuestao">
-                    		<option value="Teste">Teste</option>
-                    	</select>
-                    	<!--<span class="error" th:if="${#fields.hasErrors('tituloProva')}" th:errors="*{tituloProva}">Preenchimento Obrigatório</span>-->
-                    </div>
-                    
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" type="text" placeholder="Descrição da Questão" autocomplete="off"/>
+                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
       					<label for="descricao">Descrição da Questão</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     </div>
                     
-                    <div class="mb-3">
-          				<p th:switch="${questao.idQuestao>0}">
-            			<button class="btn btn-primary btn-sm" type="submit" th:case="${true}" th:text="Atualizar"></button>
-            			<button class="btn btn-primary btn-sm" type="submit" th:case="*" th:text="Adicionar"></button>
-          				</p>
-        			</div>
+                 
+            			<button class="btn btn-primary btn-sm" type="submit" th:text="Adicionar"></button>
+          			
+        			
       			</form>
                 
             </div>
         </header>
 	</body>
 </html>
+
+ <!-- 
+	
+					TESTE 2 chave estrangeira TAG
+					
+ 					<div class="form-floating mb-3">
+      					<label class="form-label" for="tipoQuestao">TAG</label>
+                    	 <br><br>
+                    	
+                    	<select id="tag" name="tag" th:field="${questao.tag}" class="form-label">
+                    		<option value="">Escolha a Tag</option>
+              				<option th:each="tag : ${questoes}"
+                      				th:value="${tag.id}" 
+                      				th:text="${tag.nome}">				
+              				</option>
+            			</select>
+                    	<span class="error" th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}">Preenchimento Obrigatório</span>
+                    </div>
+                    
+                    
+                    
+                    TESTE 1
+                    
+                    <div class="form-floating mb-3">
+      					<label class="form-label" for="tagQuestao">TAG</label>
+                    	<select id="tag" name="tag" th:field="*{tag}" class="form-label">
+              				<option th:each="tagOpt : ${questao.tag}"
+                      				th:value="${tagOpt.id}"
+                      				th:text="${tagOpt.nome}">				
+              				</option>
+            			</select>
+                    	<span class="error" th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}">Preenchimento Obrigatório</span>
+                    </div>
+                    
+                    -->
