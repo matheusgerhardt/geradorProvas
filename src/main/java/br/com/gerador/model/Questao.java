@@ -11,10 +11,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name="questoes")
 public class Questao implements Serializable{
 	/**
 	 * 
@@ -33,12 +35,6 @@ public class Questao implements Serializable{
 	@Enumerated(value = EnumType.STRING)
 	private indiceDificuldade indiceDificuldade;
 	
-	
-	@Column( nullable = false)
-	@NotBlank(message="Campo Obrigatório")
-	private String descricao;
-	
-
 	/*
 	 * iNCLUINDO TAG
 	@ManyToOne
@@ -50,18 +46,27 @@ public class Questao implements Serializable{
 	@Enumerated(value = EnumType.STRING)
 	private Tag tag;
 	
-
-	public Questao() {}
-
-	public Questao(Long idQuestao,  tipoQuestao tipoQuestao, indiceDificuldade indiceDificuldade, String descricao, Tag tag) {
-		super();
-		this.idQuestao = idQuestao;
-		this.tipoQuestao = tipoQuestao;
-		this.indiceDificuldade = indiceDificuldade;
-		this.descricao = descricao;
-		this.tag = tag;
-	}
+	@Column(nullable = false)
+	@NotBlank(message="Campo Obrigatório")
+	private String descricao;
 	
+	
+	//inclusao de tipos de resposta
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="ID_RESPOSTAABERTA", referencedColumnName= "idRespostaAberta")
+	private respostaAberta respostaAberta;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="ID_RESPOSTAUNICA", referencedColumnName= "idRespostaUnica")
+	private respostaUnica respostaUnica;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="ID_RESPOSTAMULTIPLA", referencedColumnName= "idRespostaMultipla")
+	private respostaMultipla respostaMultipla;
+	
+	
+	//Getters and Setters
 	public Long getIdQuestao() {
 		return idQuestao;
 	}
@@ -102,11 +107,76 @@ public class Questao implements Serializable{
 		this.tag = tag;
 	}
 
-	@Override
-	public String toString() {
-		return "Questao [idQuestao=" + idQuestao + ", tipoQuestao=" + tipoQuestao + ", indiceDificuldade="
-				+ indiceDificuldade + ", descricao=" + descricao + ", tag=" + tag + "]";
+	public respostaAberta getRespostaAberta() {
+		return respostaAberta;
 	}
+
+	public void setRespostaAberta(respostaAberta respostaAberta) {
+		this.respostaAberta = respostaAberta;
+	}
+
+	public respostaUnica getRespostaUnica() {
+		return respostaUnica;
+	}
+
+	public void setRespostaUnica(respostaUnica respostaUnica) {
+		this.respostaUnica = respostaUnica;
+	}
+
+	public respostaMultipla getRespostaMultipla() {
+		return respostaMultipla;
+	}
+
+	public void setRespostaMultipla(respostaMultipla respostaMultipla) {
+		this.respostaMultipla = respostaMultipla;
+	}
+	
+	
+	//Construtores
+	
+	public Questao() {}
+	
+	//Construtor sem Resposta
+	public Questao(Long idQuestao,  tipoQuestao tipoQuestao, indiceDificuldade indiceDificuldade, String descricao, Tag tag) {
+		super();
+		this.idQuestao = idQuestao;
+		this.tipoQuestao = tipoQuestao;
+		this.indiceDificuldade = indiceDificuldade;
+		this.descricao = descricao;
+		this.tag = tag;
+	}
+	
+	//Construtor Resposta Aberta
+	public Questao(Long idQuestao,  tipoQuestao tipoQuestao, indiceDificuldade indiceDificuldade, String descricao, Tag tag, respostaAberta respostaAberta) {
+		super();
+		this.idQuestao = idQuestao;
+		this.tipoQuestao = tipoQuestao;
+		this.indiceDificuldade = indiceDificuldade;
+		this.descricao = descricao;
+		this.tag = tag;
+	}
+	
+	//Construtor Resposta Unica
+	public Questao(Long idQuestao,  tipoQuestao tipoQuestao, indiceDificuldade indiceDificuldade, String descricao, Tag tag, respostaUnica respostaUnica) {
+		super();
+		this.idQuestao = idQuestao;
+		this.tipoQuestao = tipoQuestao;
+		this.indiceDificuldade = indiceDificuldade;
+		this.descricao = descricao;
+		this.tag = tag;
+	}
+	
+	//Construtor Resposta Multipla
+	public Questao(Long idQuestao,  tipoQuestao tipoQuestao, indiceDificuldade indiceDificuldade, String descricao, Tag tag, respostaMultipla respostaMultipla) {
+		super();
+		this.idQuestao = idQuestao;
+		this.tipoQuestao = tipoQuestao;
+		this.indiceDificuldade = indiceDificuldade;
+		this.descricao = descricao;
+		this.tag = tag;
+	}
+	
+
 	
 	
 	

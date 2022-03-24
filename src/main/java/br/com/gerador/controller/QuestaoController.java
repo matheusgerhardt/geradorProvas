@@ -9,16 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import br.com.gerador.dao.QuestaoRepository;
+import br.com.gerador.dao.RespostaAbertaRepository;
 import br.com.gerador.model.Questao;
-import br.com.gerador.service.QuestaoService;
-import br.com.gerador.service.TagService;
+import br.com.gerador.model.respostaAberta;
+import br.com.gerador.model.tipoQuestao;
 
 
 @Controller
@@ -26,6 +25,11 @@ import br.com.gerador.service.TagService;
 public class QuestaoController {
 	@Autowired
 	QuestaoRepository daoQuestao;
+	
+	@Autowired
+	RespostaAbertaRepository daoRespostaAberta;
+	
+	
 	//private QuestaoService service;
 	//private TagService tagService;
 	
@@ -62,7 +66,39 @@ public class QuestaoController {
 			return "questao/manterQuestao.html";
 		}
 		daoQuestao.save(questao);
-		return "redirect:/questao/list";
+		return "redirect:/questoes/list";
+	}
+	
+	@PostMapping("/saveAberta")
+	public String saveAberta(@Valid Questao questao, respostaAberta respostaAberta, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "questao/manterQuestao.html";
+		}
+		questao.setTipoQuestao(tipoQuestao.ABERTA);
+		questao.setRespostaAberta(respostaAberta);
+		daoQuestao.save(questao);
+		
+		return "redirect:/questoes/list";
+	}
+	
+	@PostMapping("/saveUnica")
+	public String saveUnica(@Valid Questao questao, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "questao/manterQuestao.html";
+		}
+		questao.setTipoQuestao(tipoQuestao.UNICA);
+		daoQuestao.save(questao);
+		return "redirect:/questoes/list";
+	}
+	
+	@PostMapping("/saveMultipla")
+	public String saveMultipla(@Valid Questao questao, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "questao/manterQuestao.html";
+		}
+		questao.setTipoQuestao(tipoQuestao.MULTIPLA);
+		daoQuestao.save(questao);
+		return "redirect:/questoes/list";
 	}
 	
 	/*
