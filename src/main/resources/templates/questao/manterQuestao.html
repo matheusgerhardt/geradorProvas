@@ -44,28 +44,30 @@
 	}            
            
 	</script>
-                <div class="form-check">
-  					<input class="form-check-input" type="radio" name = "a" id="a" onClick="mostrarAberta()" checked>
+			<div class="d-flex justify-content-around">
+                <div class="form-check p-2">
+  					<input class="form-check-input" type="radio" name = "abc" id="a" onClick="mostrarAberta()" checked>
   						<label class="form-check-label" for="a">
     						Aberta 
   						</label>
                 </div>
-                <div class="form-check">
-					<input class="form-check-input" type="radio" name = "b" id="b" onClick="mostrarUnica()"> 
+                <div class="form-check p-2">
+					<input class="form-check-input" type="radio" name = "abc" id="b" onClick="mostrarUnica()"> 
 						<label class="form-check-label" for="b">
     						Única 
   						</label>
                 </div>
-                <div class="form-check">
-					<input class="form-check-input" type="radio" name = "c" id="c" onCLick="mostrarMultipla()">
+                <div class="form-check p-2">
+					<input class="form-check-input" type="radio" name = "abc" id="c" onCLick="mostrarMultipla()">
 						<label class="form-check-label" for="c">
     						Múltipla
   						</label>
                 </div>	
+			</div>
 					
 					<!-- ABERTAAAAAAAA -->
 					
-					<div style="" id="A"><br/>CADASTRO QUESTÃO ABERTA
+					<div id="A"><br/>CADASTRO QUESTÃO ABERTA
 					
 					<form th:object="${questao}" action="/questoes/saveAberta" method="POST">
       				<input type="hidden" th:field="${questao.idQuestao}" th:if="${questao.idQuestao}">
@@ -139,8 +141,8 @@
       					<label for="primeiraAlternativa">Primeira Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     	
-                    		<input type="radio"  th:value="true" name="quest1" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest1">Falsa 
+                    		<!--<input type="radio"  th:value="true" name="quest1" checked>Verdadeira  
+							<input type="radio"  th:value="false" name="quest1">Falsa -->
                     	                	
                     </div>
                     
@@ -149,8 +151,8 @@
       					<label for="segundaAlternativa">Segunda Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     	
-                    		<input type="radio"  th:value="true" name="quest2" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest2">Falsa 
+                    		<!--<input type="radio"  th:value="true" name="quest2" checked>Verdadeira  
+							<input type="radio"  th:value="false" name="quest2">Falsa -->
                     	                	
                     </div>
                     
@@ -159,8 +161,8 @@
       					<label for="terceiraAlternativa">Terceira Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     	
-                    		<input type="radio"  th:value="true" name="quest3" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest3">Falsa 
+                    		<!--<input type="radio"  th:value="true" name="quest3" checked>Verdadeira  
+							<input type="radio"  th:value="false" name="quest3">Falsa--> 
                     	                	
                     </div>
                     
@@ -169,8 +171,8 @@
       					<label for="quartaAlternativa">Quarta Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     	
-                    		<input type="radio"  th:value="true" name="quest4" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest4">Falsa 
+                    		<!--<input type="radio"  th:value="true" name="quest4" checked>Verdadeira  
+							<input type="radio"  th:value="false" name="quest4">Falsa -->
                     	                	
                     </div>
                     
@@ -179,12 +181,19 @@
       					<label for="quintaAlternativa">Quinta Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     	
-                    		<input type="radio"  th:value="true" name="quest5" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest5">Falsa 
+                    		<!--<input type="radio"  th:value="true" name="quest5" checked>Verdadeira  
+							<input type="radio"  th:value="false" name="quest5">Falsa -->
                     	                	
                     </div>
                     
-w
+                    <div class="col-8">
+            			<label class="form-label" for="questaoCorreta">Questão Verdadeira</label>
+	    				<select name='questaoCorreta' class="form-control">
+	    				<option th:each="difOpt: ${T(br.com.gerador.model.questaoCorreta).values()}"
+	    					th:value="${difOpt}" th:text="${difOpt}"/></option>
+	    				</select>
+          			</div>  
+                    
             			<button class="btn btn-primary btn-sm" type="submit" th:text="Adicionar"></button>
           			
         			
