@@ -21,33 +21,47 @@
 	
     function mostrarAberta()
 	{
-    		document.getElementById("B").style.visibility="hidden";
-    		document.getElementById("C").style.visibility="hidden";
-    		document.getElementById("A").style.visibility="visible";
+    		document.getElementById("B").style.display="none";
+    		document.getElementById("C").style.display="none";
+    		document.getElementById("A").style.display="inline";
 
 	} 
         
     function mostrarUnica()
 		{
-		    document.getElementById("A").style.visibility="hidden";
-		    document.getElementById("C").style.visibility="hidden";
-    		document.getElementById("B").style.visibility="visible";    
+		    document.getElementById("A").style.display="none";
+		    document.getElementById("C").style.display="none";
+    		document.getElementById("B").style.display="inline";    
 		}
 
 	
 	
 	function mostrarMultipla()
 	{
-    		document.getElementById("B").style.visibility="hidden";
-    		document.getElementById("A").style.visibility="hidden";
-    		document.getElementById("C").style.visibility="visible";
+    		document.getElementById("B").style.display="none";
+    		document.getElementById("A").style.display="none";
+    		document.getElementById("C").style.display="inline";
 	}            
            
 	</script>
-                
-  				<input type="radio"  name="aorb" onClick="mostrarAberta()" checked>Aberta  
-				<input type="radio"  name="aorb" onClick="mostrarUnica()">Unica 
-				<input type="radio" name="aorb" onCLick="mostrarMultipla()">Multipla	
+                <div class="form-check">
+  					<input class="form-check-input" type="radio" name = "a" id="a" onClick="mostrarAberta()" checked>
+  						<label class="form-check-label" for="a">
+    						Aberta 
+  						</label>
+                </div>
+                <div class="form-check">
+					<input class="form-check-input" type="radio" name = "b" id="b" onClick="mostrarUnica()"> 
+						<label class="form-check-label" for="b">
+    						Única 
+  						</label>
+                </div>
+                <div class="form-check">
+					<input class="form-check-input" type="radio" name = "c" id="c" onCLick="mostrarMultipla()">
+						<label class="form-check-label" for="c">
+    						Múltipla
+  						</label>
+                </div>	
 					
 					<!-- ABERTAAAAAAAA -->
 					
@@ -89,7 +103,7 @@
 					
 					<!--UNICAAAAAAAAAAAA -->
 					
-					<div style="visibility:hidden" id="B"><br/>CADASTRO QUESTAO UNICA
+					<div style="display: none;" id="B"><br/>CADASTRO QUESTAO UNICA
 					
 					<form th:object="${questao}" action="/questoes/saveUnica" method="POST">
       				<input type="hidden" th:field="${questao.idQuestao}" th:if="${questao.idQuestao}">
@@ -179,7 +193,7 @@ w
       			
       			<!-- MULTIPLAAAAA -->
 					
-					<div style="visibility:hidden" id="C"><br/>CADASTRO QUESTAO MULTIPLA
+					<div style="display: none;" id="C"><br/>CADASTRO QUESTAO MULTIPLA
 					
                
       			
