@@ -29,8 +29,8 @@
           					<td><a class="align-self-start" th:href="@{/questoes/delete/{idQuestao}(idQuestao=${questao.idQuestao})}">
            						 <i class="bi bi-dash-circle" title="Excluir"></i>
           					</a>
-          					<a class="align-self-end" href="#">
-           						 <i class="bi bi-eye" title="Visualizar"></i>
+          					<a class="align-self-end" th:href="@{/questoes/edit/{idQuestao}(idQuestao=${questao.idQuestao})}">
+           						 <i class="bi bi-eye" title="Editar"></i>
           					</a></td>
         				</tr>
       				</tbody>

@@ -230,9 +230,21 @@
                     	<input class="form-control" id="alternativa1" th:field="${respostaMultipla.alternativa1}" type="text" placeholder="Primeira Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="primeiraAlternativa">Primeira Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('respostaMultipla.alternativa1')}" th:errors="*{respostaMultipla.alternativa1}">Preenchimento Obrigatório</span>
-                    	
-                    		<input type="radio"  th:field="${respostaMultipla.valida1}" th:value="true" name="valida1" checked>Verdadeira  
-							<input type="radio"  th:field="${respostaMultipla.valida1}" th:value="false" name="valida1">Falsa
+                    		
+                    		<div class="d-flex justify-content-around">
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida1}" th:value="true" id = "a" name="valida1" checked>
+                    				<label class="form-check-label" for="a">
+    									Verdadeira
+  									</label>
+                    			</div>
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida1}" th:value="false" id="b" name="valida1">
+                    				<label class="form-check-label" for="b">
+    									Falsa
+  									</label>
+                    			</div>
+                    		</div>
                     	                	
                     </div>
                     
@@ -240,38 +252,84 @@
                     	<input class="form-control" id="alternativa2" th:field="${respostaUnica.alternativa2}" type="text" placeholder="Segunda Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="segundaAlternativa">Segunda Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa2')}" th:errors="*{respostaUnica.alternativa2}">Preenchimento Obrigatório</span>
-                    	
-                    		<input type="radio"  th:field="${respostaMultipla.valida2}" th:value="true" name="valida2" checked>Verdadeira  
-							<input type="radio"  th:field="${respostaMultipla.valida2}" th:value="false" name="valida2">Falsa
-                    	                	
+                    		
+                    		<div class="d-flex justify-content-around">
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida2}" th:value="true" id = "a" name="valida2" checked>
+                    				<label class="form-check-label" for="a">
+    									Verdadeira
+  									</label>
+                    			</div>
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida2}" th:value="false" id="b" name="valida2">
+                    				<label class="form-check-label" for="b">
+    									Falsa
+  									</label>
+                    			</div>
+                    		</div>	
                     </div>
                     
                      <div class="form-floating mb-3">
                     	<input class="form-control" id="alternativa3" th:field="${respostaUnica.alternativa3}" type="text" placeholder="Terceira Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="terceiraAlternativa">Terceira Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa3')}" th:errors="*{respostaUnica.alternativa3}">Preenchimento Obrigatório</span>
-                    	
-                    		<input type="radio"  th:field="${respostaMultipla.valida3}" th:value="true" name="valida3" checked>Verdadeira  
-							<input type="radio"  th:field="${respostaMultipla.valida3}" th:value="false" name="valida3">Falsa                    	                	
+                    		
+                    		<div class="d-flex justify-content-around">
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida3}" th:value="true" id = "a" name="valida3" checked>
+                    				<label class="form-check-label" for="a">
+    									Verdadeira
+  									</label>
+                    			</div>
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida3}" th:value="false" id="b" name="valida3">
+                    				<label class="form-check-label" for="b">
+    									Falsa
+  									</label>
+                    			</div>
+                    		</div>	                   	                	
                     </div>
                     
                      <div class="form-floating mb-3">
                     	<input class="form-control" id="alternativa4" th:field="${respostaUnica.alternativa4}" type="text" placeholder="Quarta Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="quartalternativa">Quarta Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa4')}" th:errors="*{respostaUnica.alternativa4}">Preenchimento Obrigatório</span>
-                    	
-                    		<input type="radio"  th:field="${respostaMultipla.valida4}" th:value="true" name="valida4" checked>Verdadeira  
-							<input type="radio"  th:field="${respostaMultipla.valida4}" th:value="false" name="valida4">Falsa                    	                	
+                    		
+                    		<div class="d-flex justify-content-around">
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida4}" th:value="true" id = "a" name="valida4" checked>
+                    				<label class="form-check-label" for="a">
+    									Verdadeira
+  									</label>
+                    			</div>
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida4}" th:value="false" id="b" name="valida4">
+                    				<label class="form-check-label" for="b">
+    									Falsa
+  									</label>
+                    			</div>
+                    		</div>	                	                	
                     </div>
                     
                      <div class="form-floating mb-3">
                     	<input class="form-control" id="alternativa5" th:field="${respostaUnica.alternativa5}" type="text" placeholder="Quinta Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="quintaAlternativa">Quinta Alternativa</label>
                     	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa5')}" th:errors="*{respostaUnica.alternativa5}">Preenchimento Obrigatório</span>
-                    	
-                    		<input type="radio"  th:field="${respostaMultipla.valida5}" th:value="true" name="valida5" checked>Verdadeira  
-							<input type="radio"  th:field="${respostaMultipla.valida5}" th:value="false" name="valida5">Falsa
-                    	                	
+                    		
+                    		<div class="d-flex justify-content-around">
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida5}" th:value="true" id = "a" name="valida5" checked>
+                    				<label class="form-check-label" for="a">
+    									Verdadeira
+  									</label>
+                    			</div>
+                    			<div class="form-check p-2">
+                    				<input class="form-check-input" type="radio"  th:field="${respostaMultipla.valida5}" th:value="false" id="b" name="valida5">
+                    				<label class="form-check-label" for="b">
+    									Falsa
+  									</label>
+                    			</div>
+                    		</div>	   	
                     </div>      
                             
                  

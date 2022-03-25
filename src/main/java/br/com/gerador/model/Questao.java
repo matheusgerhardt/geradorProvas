@@ -1,6 +1,8 @@
 package br.com.gerador.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -64,6 +67,8 @@ public class Questao implements Serializable{
 	@JoinColumn(name="ID_RESPOSTAMULTIPLA", referencedColumnName= "idRespostaMultipla")
 	private respostaMultipla respostaMultipla;
 	
+	@ManyToMany(mappedBy = "questoes")
+	private Set<Prova> provas = new HashSet<>();
 	
 	//Getters and Setters
 	public Long getIdQuestao() {
@@ -130,6 +135,13 @@ public class Questao implements Serializable{
 		this.respostaMultipla = respostaMultipla;
 	}
 	
+	public Set<Prova> getProvas() {
+		return provas;
+	}
+
+	public void setProvas(Set<Prova> provas) {
+		this.provas = provas;
+	}
 	
 	//Construtores
 	

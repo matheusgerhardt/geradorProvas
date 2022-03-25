@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.gerador.dao.ProvaRepository;
 import br.com.gerador.model.Prova;
+import br.com.gerador.model.Questao;
+import br.com.gerador.model.respostaAberta;
+import br.com.gerador.model.tipoQuestao;
 
 
 @Controller
@@ -57,6 +60,16 @@ public class ProvaController {
 			return "prova/manterProva.html";
 		}
 		dao.save(prova);
+		return "redirect:/provas/list";
+	}
+	
+	@PostMapping("/saveQuestao")
+	public String saveAberta(@Valid Prova prova, Questao questao, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "questao/manterProva.html";
+		}
+		dao.save(prova);
+		
 		return "redirect:/provas/list";
 	}
 }
