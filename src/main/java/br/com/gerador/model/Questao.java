@@ -51,8 +51,7 @@ public class Questao implements Serializable{
 	private String descricao;
 	
 	
-	//inclusao de tipos de resposta
-	
+	// ULTILIZAÇÃO STRATATEGY PARA MAPEAMENTO DOS TIPOS DE PERGUNTA/RESPOSTA
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ID_RESPOSTAABERTA", referencedColumnName= "idRespostaAberta")
 	private respostaAberta respostaAberta;

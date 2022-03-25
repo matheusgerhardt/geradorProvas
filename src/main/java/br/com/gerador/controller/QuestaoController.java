@@ -17,6 +17,8 @@ import br.com.gerador.dao.QuestaoRepository;
 import br.com.gerador.dao.RespostaAbertaRepository;
 import br.com.gerador.model.Questao;
 import br.com.gerador.model.respostaAberta;
+import br.com.gerador.model.respostaMultipla;
+import br.com.gerador.model.respostaUnica;
 import br.com.gerador.model.tipoQuestao;
 
 
@@ -36,7 +38,11 @@ public class QuestaoController {
 	@GetMapping("/new")
 	public String newForm(Model model) {
 		Questao questao = new Questao();
+		respostaUnica respostaunica = new respostaUnica();
+		respostaMultipla respostamultipla = new respostaMultipla();
 		model.addAttribute("questao", questao);
+		model.addAttribute("respostaUnica", respostaunica);
+		model.addAttribute("respostaMultipla", respostamultipla);
 		return "questao/manterQuestao.html";
 	}
 	
@@ -76,27 +82,30 @@ public class QuestaoController {
 		}
 		questao.setTipoQuestao(tipoQuestao.ABERTA);
 		questao.setRespostaAberta(respostaAberta);
+		
 		daoQuestao.save(questao);
 		
 		return "redirect:/questoes/list";
 	}
 	
 	@PostMapping("/saveUnica")
-	public String saveUnica(@Valid Questao questao, BindingResult result, Model model) {
+	public String saveUnica(@Valid Questao questao, respostaUnica respostaUnica, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			return "questao/manterQuestao.html";
 		}
 		questao.setTipoQuestao(tipoQuestao.UNICA);
+		questao.setRespostaUnica(respostaUnica);
 		daoQuestao.save(questao);
 		return "redirect:/questoes/list";
 	}
 	
 	@PostMapping("/saveMultipla")
-	public String saveMultipla(@Valid Questao questao, BindingResult result, Model model) {
+	public String saveMultipla(@Valid Questao questao, respostaMultipla respostaMultipla, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			return "questao/manterQuestao.html";
 		}
 		questao.setTipoQuestao(tipoQuestao.MULTIPLA);
+		questao.setRespostaMultipla(respostaMultipla);
 		daoQuestao.save(questao);
 		return "redirect:/questoes/list";
 	}

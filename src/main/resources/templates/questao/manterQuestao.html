@@ -129,62 +129,51 @@
 	    				</select>
           			</div><br>
                     
+					<!-- ENUNCIADO -->  
   
                     <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
+                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Enunciado da Questão" th:errorclass="inputError" autocomplete="off"/>
       					<label for="descricao">Enunciado da Questão</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
                     </div><br>
                     
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
+                    <!-- ALTERNATIVAS -->
+                    
+                    
+                    <div class="form-floating mb-3" >
+                    	<input class="form-control" id="alternativa1" th:field="${respostaUnica.alternativa1}" type="text" placeholder="Primeira Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="primeiraAlternativa">Primeira Alternativa</label>
-                    	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
-                    	
-                    		<!--<input type="radio"  th:value="true" name="quest1" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest1">Falsa -->
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa1')}" th:errors="*{respostaUnica.alternativa1}">Preenchimento Obrigatório</span>
                     	                	
                     </div>
-                    
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
+                     
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa2" th:field="${respostaUnica.alternativa2}" type="text" placeholder="Segunda Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="segundaAlternativa">Segunda Alternativa</label>
-                    	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
-                    	
-                    		<!--<input type="radio"  th:value="true" name="quest2" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest2">Falsa -->
-                    	                	
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa2')}" th:errors="*{respostaUnica.alternativa2}">Preenchimento Obrigatório</span>
+                    	                     	
                     </div>
                     
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa3" th:field="${respostaUnica.alternativa3}" type="text" placeholder="Terceira Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="terceiraAlternativa">Terceira Alternativa</label>
-                    	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
-                    	
-                    		<!--<input type="radio"  th:value="true" name="quest3" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest3">Falsa--> 
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa3')}" th:errors="*{respostaUnica.alternativa3}">Preenchimento Obrigatório</span>	
                     	                	
                     </div>
                     
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
-      					<label for="quartaAlternativa">Quarta Alternativa</label>
-                    	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
-                    	
-                    		<!--<input type="radio"  th:value="true" name="quest4" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest4">Falsa -->
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa4" th:field="${respostaUnica.alternativa4}" type="text" placeholder="Quarta Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="quartalternativa">Quarta Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa4')}" th:errors="*{respostaUnica.alternativa4}">Preenchimento Obrigatório</span>	
                     	                	
                     </div>
                     
-                    <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa5" th:field="${respostaUnica.alternativa5}" type="text" placeholder="Quinta Alternativa" th:errorclass="inputError" autocomplete="off"/>
       					<label for="quintaAlternativa">Quinta Alternativa</label>
-                    	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
-                    	
-                    		<!--<input type="radio"  th:value="true" name="quest5" checked>Verdadeira  
-							<input type="radio"  th:value="false" name="quest5">Falsa -->
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa5')}" th:errors="*{respostaUnica.alternativa5}">Preenchimento Obrigatório</span>
                     	                	
-                    </div>
+                    </div>                             
                     
                     <div class="col-8">
             			<label class="form-label" for="questaoCorreta">Questão Verdadeira</label>
@@ -202,11 +191,9 @@
       			
       			<!-- MULTIPLAAAAA -->
 					
-					<div style="display: none;" id="C"><br/>CADASTRO QUESTAO MULTIPLA
-					
-               
-      			
-      			<form th:object="${questao}" action="/questoes/save" method="POST">
+				<div style="display: none;" id="C"><br/>CADASTRO QUESTAO MULTIPLA
+					                     			
+      			<form th:object="${questao}" action="/questoes/saveMultipla" method="POST">
       				<input type="hidden" th:field="${questao.idQuestao}" th:if="${questao.idQuestao}">
       				<form>
       				
@@ -218,16 +205,7 @@
 	    					th:value="${difOpt}" th:text="${difOpt}"/></option>
 	    				</select>
           			</div>
-          			
-          			<br>                 
-                    <div class="col-8">
-            			<label class="form-label" for="tipoQuestao">Tipo da Questão</label>
-	    				<select name='tipoQuestao' class="form-control">
-	    				<option th:each="tipoOpt: ${T(br.com.gerador.model.tipoQuestao).values()}"
-	    					th:value="${tipoOpt}" th:text="${tipoOpt}"/>
-	    				</select>
-          			</div>
-          			
+          			   
           			<br>
           			<div class="col-8">
             			<label class="form-label" for="Tag">Tag</label>
@@ -237,13 +215,65 @@
 	    				</select>
           			</div><br>
                     
+  					<!-- ENUNCIADO -->  
   
                     <div class="form-floating mb-3">
-                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Descrição da Questão" th:errorclass="inputError" autocomplete="off"/>
-      					<label for="descricao">Descrição da Questão</label>
+                    	<input class="form-control" id="descricao" th:field="*{descricao}" type="text" placeholder="Enunciado da Questão" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="descricao">Enunciado da Questão</label>
                     	<span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Preenchimento Obrigatório</span>
+                    </div><br>
+                    
+                    <!-- ALTERNATIVAS -->
+                    
+                    
+                    <div class="form-floating mb-3" >
+                    	<input class="form-control" id="alternativa1" th:field="${respostaMultipla.alternativa1}" type="text" placeholder="Primeira Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="primeiraAlternativa">Primeira Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaMultipla.alternativa1')}" th:errors="*{respostaMultipla.alternativa1}">Preenchimento Obrigatório</span>
+                    	
+                    		<input type="radio"  th:field="${respostaMultipla.valida1}" th:value="true" name="valida1" checked>Verdadeira  
+							<input type="radio"  th:field="${respostaMultipla.valida1}" th:value="false" name="valida1">Falsa
+                    	                	
                     </div>
                     
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa2" th:field="${respostaUnica.alternativa2}" type="text" placeholder="Segunda Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="segundaAlternativa">Segunda Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa2')}" th:errors="*{respostaUnica.alternativa2}">Preenchimento Obrigatório</span>
+                    	
+                    		<input type="radio"  th:field="${respostaMultipla.valida2}" th:value="true" name="valida2" checked>Verdadeira  
+							<input type="radio"  th:field="${respostaMultipla.valida2}" th:value="false" name="valida2">Falsa
+                    	                	
+                    </div>
+                    
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa3" th:field="${respostaUnica.alternativa3}" type="text" placeholder="Terceira Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="terceiraAlternativa">Terceira Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa3')}" th:errors="*{respostaUnica.alternativa3}">Preenchimento Obrigatório</span>
+                    	
+                    		<input type="radio"  th:field="${respostaMultipla.valida3}" th:value="true" name="valida3" checked>Verdadeira  
+							<input type="radio"  th:field="${respostaMultipla.valida3}" th:value="false" name="valida3">Falsa                    	                	
+                    </div>
+                    
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa4" th:field="${respostaUnica.alternativa4}" type="text" placeholder="Quarta Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="quartalternativa">Quarta Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa4')}" th:errors="*{respostaUnica.alternativa4}">Preenchimento Obrigatório</span>
+                    	
+                    		<input type="radio"  th:field="${respostaMultipla.valida4}" th:value="true" name="valida4" checked>Verdadeira  
+							<input type="radio"  th:field="${respostaMultipla.valida4}" th:value="false" name="valida4">Falsa                    	                	
+                    </div>
+                    
+                     <div class="form-floating mb-3">
+                    	<input class="form-control" id="alternativa5" th:field="${respostaUnica.alternativa5}" type="text" placeholder="Quinta Alternativa" th:errorclass="inputError" autocomplete="off"/>
+      					<label for="quintaAlternativa">Quinta Alternativa</label>
+                    	<span class="error" th:if="${#fields.hasErrors('respostaUnica.alternativa5')}" th:errors="*{respostaUnica.alternativa5}">Preenchimento Obrigatório</span>
+                    	
+                    		<input type="radio"  th:field="${respostaMultipla.valida5}" th:value="true" name="valida5" checked>Verdadeira  
+							<input type="radio"  th:field="${respostaMultipla.valida5}" th:value="false" name="valida5">Falsa
+                    	                	
+                    </div>      
+                            
                  
             			<button class="btn btn-primary btn-sm" type="submit" th:text="Adicionar"></button>
           			
@@ -290,3 +320,9 @@
                     </div>
                     
                     -->
+                    
+                    <!-- 
+	
+	
+	
+-->
