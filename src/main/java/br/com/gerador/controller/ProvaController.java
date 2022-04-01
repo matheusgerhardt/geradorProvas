@@ -1,6 +1,7 @@
 package br.com.gerador.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -63,11 +64,12 @@ public class ProvaController {
 		return "redirect:/provas/list";
 	}
 	
-	@PostMapping("/saveQuestao")
+	@PostMapping("/saveQuestao/{id}")
 	public String saveAberta(@Valid Prova prova, Questao questao, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			return "questao/manterProva.html";
 		}
+		prova.setQuestoes((Set<Questao>) questao);
 		dao.save(prova);
 		
 		return "redirect:/provas/list";

@@ -66,6 +66,13 @@ public class QuestaoController {
 		return "questao/list.html";
 	}
 	
+	@GetMapping("/listProva")
+	public String listProva(Model model) {
+		List<Questao> questaoList = daoQuestao.findAll();
+		model.addAttribute("questaoList", questaoList);
+		return "questao/listCadastroQuestao.html";
+	}
+	
 	@PostMapping("/save")
 	public String save(@Valid Questao questao, BindingResult result, Model model) {
 		if(result.hasErrors()) {
@@ -82,7 +89,6 @@ public class QuestaoController {
 		}
 		questao.setTipoQuestao(tipoQuestao.ABERTA);
 		questao.setRespostaAberta(respostaAberta);
-		
 		daoQuestao.save(questao);
 		
 		return "redirect:/questoes/list";

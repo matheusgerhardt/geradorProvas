@@ -9,7 +9,7 @@
 			<div class="container d-flex align-items-center flex-column">
 				<a class="btn btn-primary btn-sm" th:href="@{/questoes/new}">Nova Questão</a>
                 <!-- Masthead Heading-->
-                <h1 class="text-uppercase mb-0 h1-gerador">Questões Geradas</h1>                                           
+                <h1 class="text-uppercase mb-0 h1-gerador">Cadastra Questão Prova</h1>                                           
                 
                 <table class="table table-striped table-bordered table-hover">
                 	<thead>
@@ -27,12 +27,19 @@
           					<td th:text="${questao.tipoQuestao}"/>
           					<td th:text="${questao.indiceDificuldade}"/>
           					<td th:text="${questao.tag}"/>
+          					
+          					<td><a class="align-self-start" th:href="@{/provas/saveQuestao/{idQuestao}(idQuestao=${questao.idQuestao})}">
+          						<i class="bi bi-dash-square" title="addQuestao"></i>
+          						</a>
+          					</td>
+          					<!--
           					<td><a class="align-self-start" th:href="@{/questoes/delete/{idQuestao}(idQuestao=${questao.idQuestao})}">
            						 <i class="bi bi-dash-circle" title="Excluir"></i>
           					</a>
           					<a class="align-self-end" th:href="@{/questoes/edit/{idQuestao}(idQuestao=${questao.idQuestao})}">
            						 <i class="bi bi-eye" title="Editar"></i>
           					</a></td>
+          					-->
         				</tr>
       				</tbody>
                 </table>

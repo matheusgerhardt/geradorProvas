@@ -17,7 +17,7 @@
                 <br>
                 <h5>Tipo Questao</h5>
                 
-                <script>
+              <script>
 	
     function mostrarAberta()
 	{
@@ -343,44 +343,3 @@
         </header>
 	</body>
 </html>
-
- <!-- 
-	
-					TESTE 2 chave estrangeira TAG
-					
- 					<div class="form-floating mb-3">
-      					<label class="form-label" for="tipoQuestao">TAG</label>
-                    	 <br><br>
-                    	
-                    	<select id="tag" name="tag" th:field="${questao.tag}" class="form-label">
-                    		<option value="">Escolha a Tag</option>
-              				<option th:each="tag : ${questoes}"
-                      				th:value="${tag.id}" 
-                      				th:text="${tag.nome}">				
-              				</option>
-            			</select>
-                    	<span class="error" th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}">Preenchimento Obrigatório</span>
-                    </div>
-                    
-                    
-                    
-                    TESTE 1
-                    
-                    <div class="form-floating mb-3">
-      					<label class="form-label" for="tagQuestao">TAG</label>
-                    	<select id="tag" name="tag" th:field="*{tag}" class="form-label">
-              				<option th:each="tagOpt : ${questao.tag}"
-                      				th:value="${tagOpt.id}"
-                      				th:text="${tagOpt.nome}">				
-              				</option>
-            			</select>
-                    	<span class="error" th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}">Preenchimento Obrigatório</span>
-                    </div>
-                    
-                    -->
-                    
-                    <!-- 
-	
-	
-	
--->
